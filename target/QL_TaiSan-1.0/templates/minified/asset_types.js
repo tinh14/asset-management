@@ -1,0 +1,1 @@
+import{getFormData as o}from"./common.js";export function getData(){return o("#save-form")}

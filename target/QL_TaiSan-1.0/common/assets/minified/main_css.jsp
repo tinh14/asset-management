@@ -1,0 +1,1 @@
+<%@include file="/common/lib.jsp"%><%@include file="/common/assets/minified/css.jsp"%><link rel="stylesheet" href="<c:url value="/templates/minified/main.css"></c:url>"/>

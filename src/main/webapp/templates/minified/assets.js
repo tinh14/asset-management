@@ -1,0 +1,1 @@
+import{getFormData as t}from"./common.js";export function getData(){let a=t("#save-form");return a.image=$("#inputImage").attr("src"),a.assetTypeId=$("input.action").filter(function(){return"searchAssetType"===$(this).attr("action")}).attr("data-value"),a}

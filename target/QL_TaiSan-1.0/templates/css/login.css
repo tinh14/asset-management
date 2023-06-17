@@ -1,0 +1,26 @@
+body {
+    background-color: #f0f2f5;
+    overflow: hidden;
+}
+
+.container-fluid {
+    height: 100vh;
+}
+
+
+.container-fluid {
+    height: 100vh;
+}
+
+.card-header {
+    background-color: white;
+}
+
+.row {
+    height: 80%;
+}
+
+.card {
+    max-height: 300px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+}

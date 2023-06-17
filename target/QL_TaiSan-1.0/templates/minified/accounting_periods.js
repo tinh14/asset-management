@@ -1,0 +1,1 @@
+import{getFormData as t}from"./common.js";export function getData(){let n=t("#save-form");return n.accountingPeriodTypeId=$("input.action").filter(function(){return"searchAccountingPeriodType"===$(this).attr("action")}).attr("data-value"),n}

@@ -1,0 +1,1 @@
+import{sendRequest as n,getURL as o,showErrorMessage as i,getFormData as r}from"./common.js";function login(){var t=r("#form");n(o("login"),"POST",JSON.stringify(t),"application/json",function(){location.href=o("dashboard/view")},function(n){i(n.responseText)})}$("#loginBtn").click(function(){login()}),$("#password, #username").keydown(function(n){"Enter"===n.key&&login()});

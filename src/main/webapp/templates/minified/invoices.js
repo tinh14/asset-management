@@ -1,0 +1,1 @@
+import{getFormData as t}from"./common.js";export function getData(){let r=t("#save-form");return r.supplierId=$("input.action").filter(function(){return"searchSupplier"===$(this).attr("action")}).attr("data-value"),r}
