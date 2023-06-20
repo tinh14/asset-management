@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
+import models.AccountModel;
 import models.UserModel;
 import services.interfaces.UserService;
 
@@ -40,7 +41,10 @@ public class UserServiceImpl implements UserService {
         List<UserModel> users = userDAO.findAll();
         for (UserModel user : users) {
             user.setDepartment(departmentDAO.findById(user.getDepartment().getId()).get(0));
-            user.setAccount(accountDAO.findByUsername(user.getAccount().getUsername()).get(0));
+            List<AccountModel> accounts = accountDAO.findByUsername(user.getAccount().getUsername());
+            if (!accounts.isEmpty()) {
+                user.setAccount(accounts.get(0));
+            }
         }
         return users;
     }
@@ -50,7 +54,10 @@ public class UserServiceImpl implements UserService {
         List<UserModel> users = userDAO.findById(id);
         for (UserModel user : users) {
             user.setDepartment(departmentDAO.findById(user.getDepartment().getId()).get(0));
-            user.setAccount(accountDAO.findByUsername(user.getAccount().getUsername()).get(0));
+            List<AccountModel> accounts = accountDAO.findByUsername(user.getAccount().getUsername());
+            if (!accounts.isEmpty()) {
+                user.setAccount(accounts.get(0));
+            }
         }
         return users;
     }
@@ -60,7 +67,10 @@ public class UserServiceImpl implements UserService {
         List<UserModel> users = userDAO.findByName(name);
         for (UserModel user : users) {
             user.setDepartment(departmentDAO.findById(user.getDepartment().getId()).get(0));
-            user.setAccount(accountDAO.findByUsername(user.getAccount().getUsername()).get(0));
+            List<AccountModel> accounts = accountDAO.findByUsername(user.getAccount().getUsername());
+            if (!accounts.isEmpty()) {
+                user.setAccount(accounts.get(0));
+            }
         }
         return users;
     }
@@ -94,7 +104,16 @@ public class UserServiceImpl implements UserService {
     }
 
     private ResponseMessage checkForeignKeyForCreate(String username) {
-        ResponseMessage response = checkForeignKey(username);
+        ResponseMessage response = new ResponseMessage();
+
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.setMessage(Constants.SAVE_SUCCESS);
+
+        if (username == null || username.isEmpty()) {
+            return response;
+        }
+
+        response = checkForeignKey(username);
 
         if (response.isError()) {
             return response;
@@ -114,7 +133,7 @@ public class UserServiceImpl implements UserService {
         response.setStatus(HttpServletResponse.SC_OK);
         response.setMessage(Constants.SAVE_SUCCESS);
 
-        if (username.isEmpty()) {
+        if (username == null || username.isEmpty()) {
             return response;
         }
 
@@ -157,14 +176,17 @@ public class UserServiceImpl implements UserService {
         try {
             transactionManager.initConnection();
             int id = userDAO.create(transactionManager.getConnection(), user);
-            user = userDAO.findById(id).get(0);
-            user.setDepartment(departmentDAO.findById(user.getId()).get(0));
-            user.setAccount(accountDAO.findByUsername(user.getAccount().getUsername()).get(0));
-            userDAO.create(transactionManager.getConnection(), user);
+            user.setId(id);
+            user.setDepartment(departmentDAO.findById(user.getDepartment().getId()).get(0));
+            List<AccountModel> accounts = accountDAO.findByUsername(user.getAccount().getUsername());
+            if (!accounts.isEmpty()) {
+                user.setAccount(accounts.get(0));
+            }
             transactionManager.commitAndCloseConnection();
         } catch (SQLException ex) {
             status = HttpServletResponse.SC_BAD_REQUEST;
             message = Constants.SAVE_FAIL;
+            message = ex.getMessage();
             transactionManager.closeConnection();
         }
         return new ResponseMessage(status, message);
@@ -190,7 +212,10 @@ public class UserServiceImpl implements UserService {
             transactionManager.initConnection();
             userDAO.update(transactionManager.getConnection(), user);
             user.setDepartment(departmentDAO.findById(user.getDepartment().getId()).get(0));
-            user.setAccount(accountDAO.findByUsername(user.getAccount().getUsername()).get(0));
+            List<AccountModel> accounts = accountDAO.findByUsername(user.getAccount().getUsername());
+            if (!accounts.isEmpty()) {
+                user.setAccount(accounts.get(0));
+            }
             transactionManager.commitAndCloseConnection();
         } catch (SQLException ex) {
             status = HttpServletResponse.SC_BAD_REQUEST;

@@ -45,10 +45,10 @@
                                             <div class="d-none">
                                                 <span data-value="${accountingPeriodType.id}">Mã: ${accountingPeriodType.id}</span>
                                             </div>
-                                            <div class="col-sm-5 d-flex align-items-center">
+                                            <div class="col-sm-7 d-flex align-items-center">
                                                 <span data-value="${accountingPeriodType.name}">Tên: ${accountingPeriodType.name}</span>
                                             </div>
-                                            <div class="col-sm-3 d-flex align-items-center">
+                                            <div class="col-sm-4 d-flex align-items-center">
                                                 <span>Số tháng: ${accountingPeriodType.numberOfMonths}</span>
                                             </div>
                                         </div>

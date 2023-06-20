@@ -85,7 +85,14 @@
                                         <td>${user.getFullName()}</td>
                                         <td><fmt:formatDate value="${user.dateOfBirth}" pattern="dd/MM/yyyy"/></td>
                                         <td class="index">${user.department.name}</td>
-                                        <td>${user.account.username}</td>
+                                        <td>
+                                            <c:if test="${user.account.username == null}">
+                                                -
+                                            </c:if>
+                                            <c:if test="${user.account.username != null}">
+                                                ${user.account.username}
+                                            </c:if>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>

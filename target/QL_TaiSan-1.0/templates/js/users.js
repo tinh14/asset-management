@@ -6,9 +6,14 @@ export function getData() {
     data["departmentId"] = $('input.action').filter(function () {
         return $(this).attr('action') === "searchDepartment";
     }).attr('data-value');
+    
     data["accountUsername"] = $('input.action').filter(function () {
         return $(this).attr('action') === "searchAccount";
     }).attr('data-value');
+    
+    if (data["accountUsername"] === ""){
+        data["accountUsername"] = null;
+    }
     
     return data;
 }

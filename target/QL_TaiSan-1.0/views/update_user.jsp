@@ -42,11 +42,11 @@
                                 <c:forEach var="department" items="${departments}">   
                                     <a class="dropdown-item border-bottom" href="javascript:void(0)">
                                         <div class="row">
-                                            <div class="col-sm-6 d-flex align-items-center">
-                                                <span data-value="${department.id}">Mã phòng ban: ${department.id}</span>
-                                            </div>
                                             <div class="col-sm-4 d-flex align-items-center">
-                                                <span data-value="${department.name}">Tên phòng ban: ${department.name}</span>
+                                                <span data-value="${department.id}">Mã: ${department.id}</span>
+                                            </div>
+                                            <div class="col-sm-6 d-flex align-items-center">
+                                                <span data-value="${department.name}">Tên: ${department.name}</span>
                                             </div>
                                         </div>
                                     </a>
@@ -66,9 +66,9 @@
                                     <a class="dropdown-item border-bottom" href="javascript:void(0)">
                                         <div class="row">
                                             <div class="col-sm-6 d-flex align-items-center">
-                                                <span data-value="${account.username}">Tên tài khoản: ${account.username}</span>
+                                                <span data-value="${account.username}">Tên: ${account.username}</span>
                                             </div>
-                                            <div class="col-sm-4 d-flex align-items-center">
+                                            <div class="col-sm-6 d-flex align-items-center">
                                                 <span data-value="${account.status}">Trạng thái: ${account.status}</span>
                                             </div>
                                         </div>

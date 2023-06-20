@@ -27,11 +27,11 @@
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <label class="form-label" for="username">Tên đăng nhập</label>
-                                        <input type="text" id="username" name="username" class="form-control" value="1" autofocus/>
+                                        <input type="text" id="username" name="username" class="form-control" autofocus/>
                                     </div>
                                     <div class="form-group col-12">
                                         <label class="form-label" for="password">Mật khẩu</label>
-                                        <input type="password" id="password" name="password" autocomplete="current-password" class="form-control" value="1"/>
+                                        <input type="password" id="password" name="password" autocomplete="current-password" class="form-control"/>
                                     </div>
                                     <div class="form-group col-12">
                                         <button class="btn btn-primary form-control" id="loginBtn" type="button">Đăng nhập</button>
