@@ -22,9 +22,9 @@
                             <label for="warehouseReceiverId">Người nhập kho</label>
                             <c:set var="warehouseReceiverId" value="${inventoryTransaction.warehouseReceiver.getId()}"/>
                             <c:set var="warehouseReceiverFullName" value="${inventoryTransaction.warehouseReceiver.getFullName()}"/>
-                            <c:set var="sessionPersonId" value="${sessionPerson.id}"/>
-                            <c:set var="sessionPersonFullName" value="${sessionPerson.getFullName()}"/>
-                            <input type="text" class="form-control" name="warehouseReceiverId" <c:if test="${isUpdatePage == true}">data-value="${warehouseReceiverId}" value="${warehouseReceiverId} - ${warehouseReceiverFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionPersonId}" value="${sessionPersonId} - ${sessionPersonFullName}"</c:if>readonly>
+                            <c:set var="sessionUserId" value="${sessionUser.id}"/>
+                            <c:set var="sessionUserFullName" value="${sessionUser.getFullName()}"/>
+                            <input type="text" class="form-control" name="warehouseReceiverId" <c:if test="${isUpdatePage == true}">data-value="${warehouseReceiverId}" value="${warehouseReceiverId} - ${warehouseReceiverFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionUserId}" value="${sessionUserId} - ${sessionUserFullName}"</c:if>readonly>
                             </div>
                             <div class="form-group col-sm-6 col-md-4 col-lg-3">
                                 <label>Ngày nhập kho</label>

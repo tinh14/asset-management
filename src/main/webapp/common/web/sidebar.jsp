@@ -5,8 +5,8 @@
         <button type="button" class="close text-right text-light" data-dismiss="modal" id="closeSidebarBtn">
             <span aria-hidden="true">&times;</span>
         </button>
-        <img src="${sessionPerson.avatar}" alt="Ảnh đại diện">
-        <h1 class="full-name">${sessionPerson.getFullName()}</h1>
+        <img src="${sessionUser.avatar}" alt="Ảnh đại diện">
+        <h1 class="full-name">${sessionUser.getFullName()}</h1>
     </header>
     <div class="menu">
         <div class="item">

@@ -77,7 +77,7 @@ public class UserController extends HttpServlet {
         try {
             int id = Integer.valueOf(param);
             req.setAttribute("isUpdatePage", true);
-            req.setAttribute("user", userService.findByPersonId(id).get(0));
+            req.setAttribute("user", userService.findById(id).get(0));
             req.getRequestDispatcher("/views/minified/update_user.jsp").forward(req, res);
         } catch (NumberFormatException e) {
             String message = "ID không tồn tại";
@@ -128,7 +128,7 @@ public class UserController extends HttpServlet {
         UserModel oldUser = null;
         if (!responseMessage.isError()) {
             newUser = mapper.treeToValue(node, UserModel.class);
-            oldUser = userService.findByPersonId(newUser.getId()).get(0);
+            oldUser = userService.findById(newUser.getId()).get(0);
             responseMessage = userService.update(newUser);
         }
 

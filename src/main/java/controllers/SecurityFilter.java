@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import models.AccountModel;
-import models.PersonModel;
+import models.UserModel;
 import services.interfaces.AuthorizationService;
 import utilz.ControllerUtilz;
 
@@ -25,8 +25,8 @@ public class SecurityFilter implements Filter {
 
     public boolean checkAuthentication(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         HttpSession session = req.getSession();
-        PersonModel person = (PersonModel) session.getAttribute("sessionPerson");
-        return person != null;
+        UserModel user = (UserModel) session.getAttribute("sessionUser");
+        return user != null;
     }
 
     public boolean checkAuthorization(HttpServletRequest req, HttpServletResponse res, String uriWithoutContextPath) throws IOException, ServletException {
@@ -57,6 +57,8 @@ public class SecurityFilter implements Filter {
         }
         HttpSession session = req.getSession();
         AccountModel account = (AccountModel) session.getAttribute("sessionAccount");
+//        UserModel user = (UserModel) session.getAttribute("sessionUser");
+
         return authorizationService.checkPermission(account.getUsername(), resource, action);
     }
 

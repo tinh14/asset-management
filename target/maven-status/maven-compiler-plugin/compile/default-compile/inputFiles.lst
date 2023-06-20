@@ -3,7 +3,6 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\AssetDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\DepartmentDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\AssetModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\AccountingPeriodTypeController.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\PersonDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\AuthorizationModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\AuthorizationServiceImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\DepartmentController.java
@@ -12,7 +11,6 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\AuthorizationDAO.ja
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\SupplierMapper.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\InventoryTransactionModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\UserDAO.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\models\PersonModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\utilz\JsonMapperValidator.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\InvoiceDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\InventoryTransactionServiceImpl.java
@@ -29,7 +27,6 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\DepartmentDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\UserController.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\AssetTypeDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\AssetDisposeDetailDAOImpl.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\AdminMapper.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\DepreciationDetailService.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\AssetService.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\DepartmentServiceImpl.java
@@ -42,12 +39,10 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\LogoutController.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\AccountingPeriodTypeModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\InventoryController.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\AssetTypeModel.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\PersonServiceImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\AccountServiceImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\UserServiceImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\LogModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\AssetTransferMapper.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\models\AdminModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\LogDetailMapper.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\InventoryTransactionDetailDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\AssetTransferServiceImpl.java
@@ -88,14 +83,11 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\SupplierService
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\AssetDisposeServiceImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\UserDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\InventoryService.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\PersonMapper.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\AdminDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\LogDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\AccountModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\models\viewmodels\AssetWithQuantityModel.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\AssetTypeController.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\ResourceMapper.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\PersonDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\interfaces\ActionDAO.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\RowMapper.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\AssetTransferDetailMapper.java
@@ -155,8 +147,6 @@ D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\DepreciationServiceIm
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\InventoryTransactionService.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\controllers\AccountController.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\mappers\AssetTypeMapper.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\AdminDAOImpl.java
-D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\PersonService.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\daos\impl\InventoryTransactionDAOImpl.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\interfaces\DepreciationMethodService.java
 D:\All\Java Projects\QL_TaiSan\src\main\java\services\impl\AccountingPeriodServiceImpl.java

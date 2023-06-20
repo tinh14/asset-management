@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.AccountModel;
+import models.DepartmentModel;
 import models.UserModel;
 
 /**
@@ -18,13 +20,21 @@ public class UserMapper implements RowMapper<UserModel> {
     
     @Override
     public UserModel mapRow(ResultSet res) {
-        UserModel user = null;
+        UserModel model = null;
         try {
-            user = new UserModel(res.getInt("personId"));
+            model = new UserModel();
+            model.setId(res.getInt("id"));
+            model.setLastName(res.getString("lastName"));
+            model.setFirstName(res.getString("firstName"));
+            model.setAddress(res.getString("address"));
+            model.setDateOfBirth(res.getDate("dateOfBirth"));
+            model.setAvatar(res.getString("avatar"));
+            model.setDepartment(new DepartmentModel(res.getInt("departmentId")));
+            model.setAccount(new AccountModel(res.getString("accountUsername")));
         } catch (SQLException ex) {
             Logger.getLogger(UserMapper.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return user;
+        return model;
     }
 
 }

@@ -50,7 +50,7 @@ public class InventoryTransactionServiceImpl implements InventoryTransactionServ
     public List<InventoryTransactionModel> findAll() {
         List<InventoryTransactionModel> inventoryTransactions = inventoryTransactionDAO.findAll();
         for (InventoryTransactionModel inventoryTransaction : inventoryTransactions) {
-            inventoryTransaction.setWarehouseReceiver(userService.findByPersonId(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
+            inventoryTransaction.setWarehouseReceiver(userService.findById(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
         }
         return inventoryTransactions;
     }
@@ -59,7 +59,7 @@ public class InventoryTransactionServiceImpl implements InventoryTransactionServ
     public List<InventoryTransactionModel> findById(int id) {
         List<InventoryTransactionModel> inventoryTransactions = inventoryTransactionDAO.findById(id);
         for (InventoryTransactionModel inventoryTransaction : inventoryTransactions) {
-            inventoryTransaction.setWarehouseReceiver(userService.findByPersonId(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
+            inventoryTransaction.setWarehouseReceiver(userService.findById(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
             List<InventoryTransactionDetailModel> list = inventoryTransactionDetailDAO.findByInventoryTransactionId(inventoryTransaction.getId());
             inventoryTransaction.setInventoryTransactionDetailList(list);
             for (InventoryTransactionDetailModel itdm : list) {
@@ -73,7 +73,7 @@ public class InventoryTransactionServiceImpl implements InventoryTransactionServ
     public List<InventoryTransactionModel> findByInvoiceIdWithWildcard(String id) {
         List<InventoryTransactionModel> inventoryTransactions = inventoryTransactionDAO.findByInvoiceIdWithWildcard(id);
         for (InventoryTransactionModel inventoryTransaction : inventoryTransactions) {
-            inventoryTransaction.setWarehouseReceiver(userService.findByPersonId(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
+            inventoryTransaction.setWarehouseReceiver(userService.findById(inventoryTransaction.getWarehouseReceiver().getId()).get(0));
         }
         return inventoryTransactions;
     }

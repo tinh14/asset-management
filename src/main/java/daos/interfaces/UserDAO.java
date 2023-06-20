@@ -14,8 +14,16 @@ import models.UserModel;
  * @author tinhlam
  */
 public interface UserDAO {
+
     public List<UserModel> findAll();
-    public List<UserModel> findByPersonId(int personId);
-    public void create(Connection connection, UserModel user) throws SQLException;
+
+    public List<UserModel> findById(int personId);
+
+    public List<UserModel> findByName(String name);
+
+    public List<UserModel> findByAccountUsername(String accountUsername);
+
+    public int create(Connection connection, UserModel user) throws SQLException;
+
     public void update(Connection connection, UserModel user) throws SQLException;
 }

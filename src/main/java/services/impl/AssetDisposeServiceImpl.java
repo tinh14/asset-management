@@ -56,7 +56,7 @@ public class AssetDisposeServiceImpl implements AssetDisposeService {
         for (AssetDisposeModel assetDispose : assetDisposeList) {
             DepartmentModel disposalDepartment = departmentDAO.findById(assetDispose.getDisposalDepartment().getId()).get(0);
             assetDispose.setDisposalDepartment(disposalDepartment);
-            assetDispose.setDisposer(userService.findByPersonId(assetDispose.getDisposer().getId()).get(0));
+            assetDispose.setDisposer(userService.findById(assetDispose.getDisposer().getId()).get(0));
         }
         return assetDisposeList;
     }
@@ -68,7 +68,7 @@ public class AssetDisposeServiceImpl implements AssetDisposeService {
         for (AssetDisposeModel assetDispose : assetDisposeList) {
             DepartmentModel disposalDepartment = departmentDAO.findById(assetDispose.getDisposalDepartment().getId()).get(0);
             assetDispose.setDisposalDepartment(disposalDepartment);
-            assetDispose.setDisposer(userService.findByPersonId(assetDispose.getDisposer().getId()).get(0));
+            assetDispose.setDisposer(userService.findById(assetDispose.getDisposer().getId()).get(0));
             List<AssetDisposeDetailModel> assetDisposeDetailList = assetDisposeDetailDAO.findByAssetDisposeId(id);
 
             for (AssetDisposeDetailModel assetDisposeDetail : assetDisposeDetailList) {

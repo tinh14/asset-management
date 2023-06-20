@@ -81,6 +81,8 @@ function check() {
         common_module.callDeleteTableItemClickEvent(asset_transfer_module.deleteTableItemCallback);
         common_module.destroySearchDropdownMenuEvent();
         common_module.callSearchDropdownMenuEvent();
+        common_module.destroyChooseItemFromDropdownMenu(); //alt
+        common_module.chooseItemFromDropdownMenu(); // alt
 
         common_module.destroyShowModalEvent();
     } else if (resource === "assetDispose") {
@@ -93,6 +95,8 @@ function check() {
         common_module.callDeleteTableItemClickEvent(asset_dispose_module.deleteTableItemCallback);
         common_module.destroySearchDropdownMenuEvent();
         common_module.callSearchDropdownMenuEvent(asset_dispose_module.callback);
+        common_module.destroyChooseItemFromDropdownMenu(); //alt
+        common_module.chooseItemFromDropdownMenu(); // alt
 
         common_module.destroyShowModalEvent();
     } else if (resource === "departmentalAssets") {
@@ -109,7 +113,7 @@ function check() {
 
         common_module.destroySearchDropdownMenuEvent();
         common_module.callSearchDropdownMenuEvent();
-        
+
         common_module.destroyInputSearchEvent();
         common_module.callInputSearchEvent();
     } else {

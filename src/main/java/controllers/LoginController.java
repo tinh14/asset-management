@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import models.AccountModel;
-import models.PersonModel;
+import models.UserModel;
 import utilz.ControllerUtilz;
 import services.interfaces.AccountService;
-import services.interfaces.PersonService;
+import services.interfaces.UserService;
 
 /**
  *
@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
     private AccountService accountService;
 
     @Inject
-    private PersonService personService;
+    private UserService userService;
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
@@ -59,13 +59,12 @@ public class LoginController extends HttpServlet {
             return;
         }
 
-        List<PersonModel> people = personService.findByAccountUsername(accounts.get(0).getUsername());
+        List<UserModel> people = userService.findByAccountUsername(accounts.get(0).getUsername());
         HttpSession session = req.getSession();
         if (!people.isEmpty()) {
-            session.setAttribute("sessionPerson", people.get(0));
+            session.setAttribute("sessionUser", people.get(0));
         }
         session.setAttribute("sessionAccount", accounts.get(0));
-
     }
 
 }

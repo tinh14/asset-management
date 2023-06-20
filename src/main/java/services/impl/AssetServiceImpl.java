@@ -125,7 +125,6 @@ public class AssetServiceImpl implements AssetService {
         } catch (SQLException ex) {
             status = HttpServletResponse.SC_BAD_REQUEST;
             message = Constants.SAVE_FAIL;
-            message = ex.getMessage();
             transactionManager.closeConnection();
         }
         return new ResponseMessage(status, message);

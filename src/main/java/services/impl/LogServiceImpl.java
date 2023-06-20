@@ -40,7 +40,6 @@ import models.InvoiceModel;
 import models.LogAssetDetailModel;
 import models.LogDetailModel;
 import models.LogModel;
-import models.PersonModel;
 import models.ResourceModel;
 import models.SupplierModel;
 import models.UserModel;
@@ -80,7 +79,7 @@ public class LogServiceImpl implements LogService {
         List<LogModel> logList = logDAO.findAll();
         for (LogModel log : logList) {
             log.setAction(actionDAO.findByIdAndResourceId(log.getAction().getId(), log.getAction().getResource().getId()).get(0));
-            log.setUser(userService.findByPersonId(log.getUser().getId()).get(0));
+            log.setUser(userService.findById(log.getUser().getId()).get(0));
         }
         return logList;
     }
@@ -98,7 +97,7 @@ public class LogServiceImpl implements LogService {
     private LogModel getCommonLogData(HttpServletRequest req) {
         String resourceId = (String) req.getAttribute("resourceId");
         String actionId = (String) req.getAttribute("actionId");
-        int userId = ((PersonModel) req.getSession().getAttribute("sessionPerson")).getId();
+        int userId = ((UserModel) req.getSession().getAttribute("sessionUser")).getId();
 
         LogModel log = new LogModel();
 

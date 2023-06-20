@@ -22,9 +22,9 @@
                             <label>Người lập</label>
                             <c:set var="creatorId" value="${depreciationSchedule.creator.getId()}"/>
                             <c:set var="creatorFullName" value="${depreciationSchedule.creator.getFullName()}"/>
-                            <c:set var="sessionPersonId" value="${sessionPerson.id}"/>
-                            <c:set var="sessionPersonFullName" value="${sessionPerson.getFullName()}"/>
-                            <input type="text" class="form-control" name="creatorId" <c:if test="${isUpdatePage == true}">data-value="${creatorId}" value="${creatorId} - ${creatorFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionPersonId}" value="${sessionPersonId} - ${sessionPersonFullName}"</c:if>readonly>
+                            <c:set var="sessionUserId" value="${sessionUser.id}"/>
+                            <c:set var="sessionUserFullName" value="${sessionUser.getFullName()}"/>
+                            <input type="text" class="form-control" name="creatorId" <c:if test="${isUpdatePage == true}">data-value="${creatorId}" value="${creatorId} - ${creatorFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionUserId}" value="${sessionUserId} - ${sessionUserFullName}"</c:if>readonly>
                             </div>
                             <div class="form-group col-sm-6 col-md-4 col-lg-3">
                                 <label>Ngày lập</label>

@@ -57,5 +57,7 @@ export function getData() {
 
     data["assetDisposeDetailList"] = list.assetDisposeDetailList;
 
+    console.log(data);
+
     return data;
 }

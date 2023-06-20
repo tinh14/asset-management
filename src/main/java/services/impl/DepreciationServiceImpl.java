@@ -53,7 +53,7 @@ public class DepreciationServiceImpl implements DepreciationService{
         List<DepreciationModel> list = depreciationDAO.findAll();
         for (DepreciationModel model : list){
             model.setAccountingPeriod(accoutingPeriodDAO.findById(model.getAccountingPeriod().getId()).get(0));
-            model.setCreator(userService.findByPersonId(model.getCreator().getId()).get(0));
+            model.setCreator(userService.findById(model.getCreator().getId()).get(0));
             model.setDepreciationMethod(depreciationMethodDAO.findById(model.getDepreciationMethod().getId()).get(0));
         }
         return list;
@@ -64,7 +64,7 @@ public class DepreciationServiceImpl implements DepreciationService{
         List<DepreciationModel> list = depreciationDAO.findAll();
         for (DepreciationModel model : list){
             model.setAccountingPeriod(accoutingPeriodDAO.findById(model.getAccountingPeriod().getId()).get(0));
-            model.setCreator(userService.findByPersonId(model.getCreator().getId()).get(0));
+            model.setCreator(userService.findById(model.getCreator().getId()).get(0));
             model.setDepreciationMethod(depreciationMethodDAO.findById(model.getDepreciationMethod().getId()).get(0));
             
             List<DepreciationDetailModel> depreciationDetailList = depreciationDetailDAO.findByDepreciationId(id);
@@ -135,7 +135,7 @@ public class DepreciationServiceImpl implements DepreciationService{
         List<DepreciationModel> list = depreciationDAO.findByAccountingPeriodName(name);
         for (DepreciationModel model : list){
             model.setAccountingPeriod(accoutingPeriodDAO.findById(model.getAccountingPeriod().getId()).get(0));
-            model.setCreator(userService.findByPersonId(model.getCreator().getId()).get(0));
+            model.setCreator(userService.findById(model.getCreator().getId()).get(0));
             model.setDepreciationMethod(depreciationMethodDAO.findById(model.getDepreciationMethod().getId()).get(0));
         }
         return list;

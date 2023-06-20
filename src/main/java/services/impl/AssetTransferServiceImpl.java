@@ -51,7 +51,7 @@ public class AssetTransferServiceImpl implements AssetTransferService {
     public List<AssetTransferModel> findAll() {
         List<AssetTransferModel> assetTransferList = assetTransferDAO.findAll();
         for (AssetTransferModel assetTransfer : assetTransferList) {
-            assetTransfer.setTransferor(userService.findByPersonId(assetTransfer.getTransferor().getId()).get(0));
+            assetTransfer.setTransferor(userService.findById(assetTransfer.getTransferor().getId()).get(0));
             assetTransfer.setReceivingDepartment(departmentDAO.findById(assetTransfer.getReceivingDepartment().getId()).get(0));
         }
         return assetTransferList;
@@ -61,7 +61,7 @@ public class AssetTransferServiceImpl implements AssetTransferService {
     public List<AssetTransferModel> findById(int id) {
         List<AssetTransferModel> assetTransferList = assetTransferDAO.findById(id);
         for (AssetTransferModel assetTransfer : assetTransferList) {
-            assetTransfer.setTransferor(userService.findByPersonId(assetTransfer.getTransferor().getId()).get(0));
+            assetTransfer.setTransferor(userService.findById(assetTransfer.getTransferor().getId()).get(0));
             assetTransfer.setReceivingDepartment(departmentDAO.findById(assetTransfer.getReceivingDepartment().getId()).get(0));
             List<AssetTransferDetailModel> assetTransferDetailList = assetTransferDetailDAO.findByAssetTransferId(assetTransfer.getId());
             for (AssetTransferDetailModel detail : assetTransferDetailList) {
@@ -135,18 +135,6 @@ public class AssetTransferServiceImpl implements AssetTransferService {
 
         }
         return new ResponseMessage(status, message);
-    }
-
-    @Override
-    public ResponseMessage deleteById(int id) {
-//        Connection connection = transactionManager.getConnection();
-//        if (!assetTransferDetailDAO.deleteByAssetTransferId(connection, id)){
-//            return false;
-//        }
-//        boolean res = assetTransferDAO.deleteById(connection, id);
-//        transactionManager.commitAndCloseConnection();
-//        return res;
-        return null;
     }
 
     @Override

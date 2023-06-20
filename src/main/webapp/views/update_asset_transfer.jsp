@@ -22,9 +22,9 @@
                             <label>Người chuyển</label>
                             <c:set var="assetTransferorId" value="${assetTransfer.transferor.getId()}"/>
                             <c:set var="assetTransferorFullName" value="${assetTransfer.transferor.getFullName()}"/>
-                            <c:set var="sessionPersonId" value="${sessionPerson.id}"/>
-                            <c:set var="sessionPersonFullName" value="${sessionPerson.getFullName()}"/>
-                            <input type="text" class="form-control" name="transferorId" <c:if test="${isUpdatePage == true}">data-value="${assetTransferorId}" value="${assetTransferorId} - ${assetTransferorFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionPersonId}" value="${sessionPersonId} - ${sessionPersonFullName}"</c:if>readonly>
+                            <c:set var="sessionUserId" value="${sessionUser.id}"/>
+                            <c:set var="sessionUserFullName" value="${sessionUser.getFullName()}"/>
+                            <input type="text" class="form-control" name="transferorId" <c:if test="${isUpdatePage == true}">data-value="${assetTransferorId}" value="${assetTransferorId} - ${assetTransferorFullName}"</c:if> <c:if test="${isUpdatePage == false}">data-value="${sessionUserId}" value="${sessionUserId} - ${sessionUserFullName}"</c:if>readonly>
                             </div>
                             <div class="form-group col-sm-6 col-md-4 col-lg-3">
                                 <label>Ngày chuyển</label>

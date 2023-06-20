@@ -19,5 +19,4 @@ public interface AssetTransferService {
     public List<AssetTransferModel> findById(int id); 
     public ResponseMessage create(AssetTransferModel assetTransfer);
     public ResponseMessage update(AssetTransferModel assetTransfer);
-    public ResponseMessage deleteById(int id);
 }

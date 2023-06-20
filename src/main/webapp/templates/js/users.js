@@ -9,5 +9,6 @@ export function getData() {
     data["accountUsername"] = $('input.action').filter(function () {
         return $(this).attr('action') === "searchAccount";
     }).attr('data-value');
+    
     return data;
 }
